@@ -1,10 +1,17 @@
 import React from 'react'
-
+import './App.css'
+import {Header, Footer} from './components'
+import {AddPost, Postlist} from './components'
 const App = () => {
   return (
-    <div>
-      app
-    </div>
+    <>
+      <Header />
+        <section className='main-page-container'>
+          <AddPost />
+          <Postlist />
+        </section>
+      <Footer />
+    </>
   )
 }
 
