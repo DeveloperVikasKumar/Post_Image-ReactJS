@@ -6,13 +6,11 @@ import {addPost} from '../features/Create Post/createPostSlice'
 const AddPost = () => {
     const [title, setTitle] = useState('')
     const [imageUrl,setImageUrl] = useState('')
-    const dispatch = useDispatch()
+    const dispatch = useDispatch( )
     
     const addPostHandler = function(event){
         event.preventDefault()
-        console.log(imageUrl)
-        console.log(title)
-        dispatch(addPost(title , imageUrl))
+        dispatch(addPost([title,imageUrl]))
         setTitle('')
         setImageUrl('')
         

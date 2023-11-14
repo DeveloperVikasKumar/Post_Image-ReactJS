@@ -36,8 +36,8 @@ export const createPostSlice = createSlice({
         addPost : function(state, action) {
             const post = {
                 PostId : nanoid(),
-                PostTitle : action.payload,
-                PostImageURL : action.payload,
+                PostTitle : action.payload[0],
+                PostImageURL : action.payload[1],
                 isLiked : false,
             }
             state.postWarehouse.push(post)
@@ -47,7 +47,6 @@ export const createPostSlice = createSlice({
             state.postWarehouse = state.postWarehouse.filter((post) => post.PostId !== action.payload)
         },
         likePost : function(state, action){
-            console.log(`button clicked`)
             state.postWarehouse.filter((post) => {
                 if(post.PostId === action.payload){
                     console.log(post.PostId)
